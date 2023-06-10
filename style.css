@@ -1,3 +1,49 @@
 * {
     box-sizing: border-box;
 }
+
+#board-container {
+    display: flex;
+    justify-content: center;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+}
+
+#MinesweeperBoard {
+    justify-items: center;
+    user-select: none;
+}
+
+#MinesweeperBoard table {
+    border-collapse: collapse;
+    font-size: 150%;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#MinesweeperBoard table td {
+    background-color: rgb(195, 195, 195);
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    min-height: 50px;
+    border: 1px solid black;
+}
+
+.site-content {
+    margin-top: 100px;
+    text-align: justify;
+    margin-left: 5%;
+    margin-right: 5%;
+    overflow: auto;
+}
+
+#box {
+    text-align: center;
+}
