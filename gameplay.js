@@ -8,6 +8,7 @@ const board_info = {
     state: false
 };
 
+var seed=177013;
 let gameTime;
 let state;
 let clicked;
@@ -34,10 +35,18 @@ function init() {
         clicked[i] = new Array(board_info.cnt_col + 1).fill(0);
     }
 
+    // on_my_way_to_gen_random_table();
+
     document.getElementById(
         "timer"
     ).innerHTML = `⏲️: 0`;
-
+    state[1] = new Array(0, 3, 6, 4, 3, 2, 7, 4);
+    state[2] = new Array(0, 1, 5, 1, 7, 1, 2, 2);
+    state[3] = new Array(0, 6, 2, 5, 3, 7, 4, 1);
+    state[4] = new Array(0, 5, 1, 2, 5, 3, 2, 7);
+    state[5] = new Array(0, 2, 6, 1, 6, 4, 5, 2);
+    state[6] = new Array(0, 1, 3, 2, 5, 1, 2, 4);
+    state[7] = new Array(0, 7, 6, 3, 2, 5, 7, 6);
     var table = document.createElement("table");
     var row, td;
     for (var i = 1; i <= board_info.cnt_row; i++) {
@@ -46,8 +55,6 @@ function init() {
             td = document.createElement("td");
             td.id = hash(i, j);
             row.appendChild(td);
-            state[i][j]=i+j-1;
-            if(state[i][j]>7) state[i][j]-=7;
             td.textContent = state[i][j];
             td.style.backgroundColor="white";
             addCellListener(td, i, j);

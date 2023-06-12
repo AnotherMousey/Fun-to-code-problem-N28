@@ -124,3 +124,7 @@ header {
     height: 40px;
     border: 1px solid black;
 }
+
+#description {
+    font-size: 30px;
+}
